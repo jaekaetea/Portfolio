@@ -56,7 +56,7 @@ h3 {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 2s;
+    transition: transform 1.5s;
     transform-style: preserve-3d;
 }
 
@@ -116,4 +116,9 @@ button {
     background-color: whitesmoke;
     margin: 0;
     padding: 5px;
+}
+
+#wrongName, #wrongEmail, #wrongComment {
+    color: red;
+    margin-top: -15px;
 }

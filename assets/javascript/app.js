@@ -15,12 +15,40 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
+$("#wrongName").css("display", "none");
+$("#wrongEmail").css("display", "none");
+$("#wrongComment").css("display", "none");
+
 $("#submit").on("click", function(event) {
     event.preventDefault();
+
+    $("#wrongName").css("display", "none");
+    $("#wrongEmail").css("display", "none");
+    $("#wrongComment").css("display", "none");
 
     var name = $("#name-input").val().trim();
     var email = $("#email-input").val().trim();
     var comment = $("#comment-input").val().trim();
+
+    if (name != "") {
+        if ((email.includes("@")) && (email.includes("."))) {
+            if (comment != "") {
+                submit(name, email, comment);
+            } else {
+                $("#wrongComment").show();
+            }
+        } else {
+            $("#wrongEmail").show();
+        }
+    } else {
+        $("#wrongName").show();
+    }
+});
+
+function submit(a, b, c) {
+    var name = a;
+    var email = b;
+    var comment = c;
 
     var newComment = {
             name: name,
@@ -35,7 +63,7 @@ $("#submit").on("click", function(event) {
     $("#comment-input").val("");
 
     alert("Your Message Has Been Sent!");
-});
+}
 
 
 $("#Cats").click(function() {
