@@ -74,12 +74,15 @@ h3 {
 .flip-box-front {
     background-color: #bbb;
     color: black;
+    box-shadow: 10px 10px 20px 10px grey;
+    z-index: 2;
 }
 
 .flip-box-back {
     background-color: skyblue;
     color: black;
     transform: rotateY(180deg);
+    box-shadow: 10px 10px 20px 10px grey;
 }
 
 #backImg {
@@ -121,4 +124,13 @@ button {
 #wrongName, #wrongEmail, #wrongComment {
     color: red;
     margin-top: -15px;
+}
+
+#portfolio {
+    text-align: center;
+    display: inline-block;
+}
+
+#hireButton {
+    color: white;
 }
